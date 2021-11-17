@@ -36,7 +36,7 @@
 
             </ButtonGroup>
 
-            <p class="cta">Já é registrado? <router-link to="/user/login">Clique aqui para fazer seu logir</router-link></p>
+            <p class="cta">Já é registrado? <router-link to="/user/login">Clique aqui para fazer seu login</router-link></p>
 
         </form>
 
