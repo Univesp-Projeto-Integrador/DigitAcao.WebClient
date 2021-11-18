@@ -31,6 +31,7 @@
                 
                 <Button
                     label="Cadastrar"
+                    icon="person-plus-fill"
                     type="submit"
                 />
 

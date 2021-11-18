@@ -34,9 +34,9 @@ a {
 
     color: var(--theme-color-2);
     font-weight: 400;
-
+    
     &:hover {
-
+        
         text-decoration: none;
 
     }
@@ -46,5 +46,13 @@ a {
 p {
 
     margin: 0 0 1rem 0;
+
+}
+
+a,
+input,
+button {
+
+    transition: all .1s linear;
 
 }

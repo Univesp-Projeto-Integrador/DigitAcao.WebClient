@@ -27,23 +27,13 @@ export default {
             type: String,
             required: true
         },
-
         type: {
             type: String,
             default: 'text'
         },
-
-        placeholder: {
-            type: String
-        },
-
-        maxlength: {
-            type: Number
-        },
-
-        required: {
-            type: Boolean
-        }
+        placeholder: String,
+        maxlength: Number,
+        required: Boolean
 
     }
 

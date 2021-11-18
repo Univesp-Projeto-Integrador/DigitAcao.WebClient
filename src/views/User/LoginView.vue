@@ -23,6 +23,7 @@
                 
                 <Button
                     label="Entrar"
+                    icon="box-arrow-in-right"
                     type="submit"
                 />
 

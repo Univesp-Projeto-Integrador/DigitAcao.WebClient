@@ -2,7 +2,10 @@
     <button
         class="button"
         :type="type"
-    >{{ label }}</button>
+    >
+        <Icon v-if="icon" class="button__icon" :symbol="icon" />
+        <span class="button__label">{{ label }}</span>
+    </button>
 </template>
 
 <script>
@@ -17,7 +20,7 @@ export default {
             type: String,
             required: true
         },
-
+        icon: String,
         type: {
             type: String,
             default: 'text'
@@ -40,7 +43,7 @@ export default {
     cursor: pointer;
     font-weight: 700;
     overflow: hidden;
-    padding: .8rem 1rem;
+    padding: .8rem 1.2rem;
     position: relative;
 
     &::after {
@@ -50,6 +53,7 @@ export default {
         height: 100%;
         left: 0;
         opacity: 0;
+        pointer-events: none;
         position: absolute;
         top: 0;
         transition: all .1s linear;
@@ -60,6 +64,13 @@ export default {
     &:hover::after {
 
         opacity: .2;
+
+    }
+
+    &__icon {
+
+        fill: #fff;
+        margin: 0 .8rem 0 -.1rem;
 
     }
 
