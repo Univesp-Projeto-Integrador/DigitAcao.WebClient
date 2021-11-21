@@ -3,7 +3,7 @@
 
         <header class="content-header">
 
-            <h1 class="content-header__title">{{ route.name }}</h1>
+            <h1 class="content-header__title">{{ route.meta.title }}</h1>
 
         </header>
         

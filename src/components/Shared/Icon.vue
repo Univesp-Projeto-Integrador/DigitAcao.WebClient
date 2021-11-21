@@ -1,7 +1,6 @@
 <template>
     <svg :class="$style.icon">
         <use :xlink:href="`${require('@/assets/icons.svg')}#${$props.symbol}`" />
-        <!-- <use :xlink:href="`${require(`@/assets/icons/${$props.symbol}.svg`)}`" /> -->
     </svg>
 </template>
 

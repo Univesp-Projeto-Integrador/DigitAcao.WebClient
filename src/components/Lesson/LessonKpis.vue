@@ -1,7 +1,7 @@
 <template>
-    <div class="kpis">
+    <div class="lesson-kpis">
 
-        Kpis
+        LessonKpis
 
     </div>
 </template>
@@ -10,7 +10,7 @@
 
 export default {
 
-    name: 'Kpis'
+    name: 'LessonKpis'
 
 }
 
@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.kpis {
+.lesson-kpis {
 
     background-color: #ddd;
     border-radius: 5px;

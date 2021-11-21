@@ -1,5 +1,5 @@
 <template>
-    <LoginTemplate>
+    <Template>
 
         <form>
 
@@ -33,12 +33,14 @@
 
         </form>
 
-    </LoginTemplate>
+    </Template>
 </template>
 
 <script>
 
-import LoginTemplate from '@/views/Template/LoginTemplate';
+import { userLogin } from '@/api'
+
+import Template from '@/templates/LoginTemplate';
 import FormField from '@/components/Shared/Form/FormField';
 import Button from '@/components/Shared/Button/Button';
 import ButtonGroup from '@/components/Shared/Button/ButtonGroup';
@@ -48,10 +50,16 @@ export default {
     name: 'LoginView',
 
     components: {
-        LoginTemplate,
+        Template,
         FormField,
         Button,
         ButtonGroup
+    },
+
+    setup() {
+
+        userLogin()
+
     }
 
 }

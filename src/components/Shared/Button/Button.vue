@@ -2,8 +2,9 @@
     <button
         class="button"
         :type="type"
+        :disabled="loading"
     >
-        <Icon v-if="icon" class="button__icon" :symbol="icon" />
+        <Icon v-if="icon" class="button__icon" :symbol="loading ? 'clock' : icon" />
         <span class="button__label">{{ label }}</span>
     </button>
 </template>
@@ -24,6 +25,10 @@ export default {
         type: {
             type: String,
             default: 'text'
+        },
+        loading: {
+            type: Boolean,
+            default: false
         }
 
     }

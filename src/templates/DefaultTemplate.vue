@@ -16,9 +16,9 @@
 
 <script>
 
-import AppHeader from '@/components/AppHeader'
-import AppContent from '@/components/AppContent'
-import AppFooter from '@/components/AppFooter'
+import AppHeader from './Default/AppHeader'
+import AppContent from './Default/AppContent'
+import AppFooter from './Default/AppFooter'
 
 export default {
 

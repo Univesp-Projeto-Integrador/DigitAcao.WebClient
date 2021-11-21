@@ -8,7 +8,7 @@
 
 <script>
 
-import DefaultTemplate from '@/views/Template/DefaultTemplate';
+import DefaultTemplate from '@/templates/DefaultTemplate';
 
 export default {
 

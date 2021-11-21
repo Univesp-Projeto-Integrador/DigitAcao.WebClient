@@ -9,6 +9,8 @@
             :placeholder="placeholder"
             :maxlength="maxlength"
             :required="required"
+            :value="modelValue"
+            @input="$emit('update:modelValue', $event.target.value)"
             autocomplete="new-password"
         />
 
@@ -22,7 +24,8 @@ export default {
     name: 'FormField',
 
     props: {
-
+        
+        modelValue: String,
         label: {
             type: String,
             required: true

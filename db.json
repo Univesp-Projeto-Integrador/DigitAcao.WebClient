@@ -1,0 +1,46 @@
+{
+  "user": [
+    {
+      "email": "dmosantos@gmail.com",
+      "password1": "teste123",
+      "password2": "teste123",
+      "id": 1
+    },
+    {
+      "email": "dmosantos2@gmail.com",
+      "password1": "teste123",
+      "password2": "teste123",
+      "id": 2
+    },
+    {
+      "email": "dmosantos22@gmail.com",
+      "password1": "a",
+      "password2": "a",
+      "id": 3
+    },
+    {
+      "email": "dmosantos3@gmail.com",
+      "password1": "teste123",
+      "password2": "teste123",
+      "id": 4
+    },
+    {
+      "email": "dmosantosdfs@gmail.com",
+      "password1": "teste123",
+      "password2": "teste123",
+      "id": 5
+    },
+    {
+      "email": "dmosantossadfgsdfg@gmail.com",
+      "password1": "teste123",
+      "password2": "teste123",
+      "id": 6
+    },
+    {
+      "email": "dmosantoasddsfafsds@gmail.com",
+      "password1": "teste123",
+      "password2": "teste123",
+      "id": 7
+    }
+  ]
+}
