@@ -1,20 +1,13 @@
 <template>
     <div class="app-footer">
 
-        <p>Desenvolvido pelo grupo de Projeto Integrador Univesp</p>
+        <p>
+            Desenvolvido pelo grupo de Projeto Integrador Univesp |
+            <router-link to="/about">Sobre</router-link>
+        </p>
 
     </div>
 </template>
-
-<script>
-
-export default {
-
-    name: 'AppFooter'
-
-}
-
-</script>
 
 <style lang="scss" scoped>
 

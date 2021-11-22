@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 
 /* Global Components */
-import Icon from '@/components/Shared/Icon'
+import Icon from '@/components/Icon'
 
 /* Create App */
 createApp(App)

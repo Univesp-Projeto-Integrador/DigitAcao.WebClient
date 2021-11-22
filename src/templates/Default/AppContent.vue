@@ -12,24 +12,12 @@
     </section>
 </template>
 
-<script>
+<script setup>
 
 import { useRoute } from 'vue-router';
 
-export default {
-
-    name: 'AppContent',
-
-    setup() {
-        
-        const route = useRoute();
+const route = useRoute();
     
-        return { route };
-
-    },
-
-}
-
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +26,7 @@ export default {
 
     margin: 0 auto;
     max-width: 1200px;
-    padding: 2rem 0;
+    padding: 2rem;
 
 }
 

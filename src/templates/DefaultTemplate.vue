@@ -14,32 +14,10 @@
     </div>
 </template>
 
-<script>
+<script setup>
 
 import AppHeader from './Default/AppHeader'
 import AppContent from './Default/AppContent'
 import AppFooter from './Default/AppFooter'
 
-export default {
-
-    name: 'DefaultTemplate',
-
-    components: {
-        AppHeader,
-        AppContent,
-        AppFooter
-    }
-
-}
-
 </script>
-
-<style lang="scss" scoped>
-
-.default-template {
-
-    display: block;
-
-}
-
-</style>

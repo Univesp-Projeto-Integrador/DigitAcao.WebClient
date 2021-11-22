@@ -5,7 +5,9 @@
 
             <header class="app-header">
                 
-                <img class="app-header__logo" src="@/assets/logo-digitacao.svg" alt="DigitAção">
+                <router-link to="/">
+                    <img class="app-header__logo" src="@/assets/logo-digitacao.svg" alt="DigitAção">
+                </router-link>
 
                 <h1 class="app-header__title">{{ route.name }}</h1>
 
@@ -18,30 +20,14 @@
     </div>
 </template>
 
-<script>
+<script setup>
 
-import Box from '@/components/Shared/Box';
+import Box from '@/components/Box';
 
 import { useRoute } from 'vue-router';
 
-export default {
-
-    name: 'LoginTemplate',
-
-    components: {
-        Box
-    },
-
-    setup() {
-        
-        const route = useRoute();
+const route = useRoute();
     
-        return { route };
-
-    },
-
-}
-
 </script>
 
 <style lang="scss" scoped>

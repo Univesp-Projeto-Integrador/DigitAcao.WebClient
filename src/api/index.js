@@ -1,1 +1,1 @@
-export * from  './user'
+export * as UserApi from  '@/contexts/User/api'

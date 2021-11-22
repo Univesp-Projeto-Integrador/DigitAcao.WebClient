@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import store from '@/store';
 import routes from './routes'
 
 const router = createRouter({
@@ -10,17 +11,33 @@ const DEFAULT_TITLE = 'DigitAção';
 
 router.beforeEach((to, from, next) => {
     
-    let title = DEFAULT_TITLE;
+    // Secure routes
+    let secure = typeof to.meta.secure === 'boolean' ? to.meta.secure : true
 
-    if(!to.meta.title && to.name)
-        to.meta.title = to.name
+    if (secure && !store.state.user.logged)
+        next('/user/login');
 
-    if(to.meta.title)
-        title = `${to.meta.title} - ${DEFAULT_TITLE}`;
+    else if(to.path == '/user/logout') {
+        if(confirm('Deseja realmente sair?'))
+            next()
+    }
+    
+    // Title
+    else {
+    
+        let title = DEFAULT_TITLE;
 
-    document.title = title;
+        if(!to.meta.title && to.name)
+            to.meta.title = to.name
 
-    next();
+        if(to.meta.title)
+            title = `${to.meta.title} - ${DEFAULT_TITLE}`;
+
+        document.title = title;
+
+        next();
+
+    }
     
 });
 

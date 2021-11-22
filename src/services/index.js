@@ -1,0 +1,1 @@
+export * as UserService from '@/contexts/User/service'

@@ -1,11 +1,9 @@
-import { routes as home } from '@/views/Home'
-import { routes as about } from '@/views/About'
-import { routes as user } from '@/views/User'
-import { routes as lesson } from '@/views/Lesson'
+import { routes as pages } from '@/contexts/Pages'
+import { routes as user } from '@/contexts/User'
+import { routes as lesson } from '@/contexts/Lesson'
 
 export default [
-    ...home,
+    ...pages,
     ...user,
-    ...about,
     ...lesson
 ]
