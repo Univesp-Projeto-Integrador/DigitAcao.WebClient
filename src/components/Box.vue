@@ -1,22 +1,26 @@
 <template>
-    <div :class="$style.box">
+    <div class="box">
+
+        <h2 class="title">{{ title }}</h2>
 
         <slot />
 
     </div>
 </template>
 
-<script>
+<script setup>
 
-export default {
+import { defineProps } from 'vue'
 
-    name: 'Box'
+const props = defineProps({
 
-}
+    title: String
+    
+})
 
 </script>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
 
 .box {
 
@@ -25,9 +29,17 @@ export default {
     border-radius: 5px;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
     display: block;
-    max-width: 500px;
     padding: 3rem;
-    width: 500px;
+    width: 100%;
+
+}
+
+.title {
+
+    color: var(--theme-color-1);
+    font-size: 1.5rem;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
 
 }
 

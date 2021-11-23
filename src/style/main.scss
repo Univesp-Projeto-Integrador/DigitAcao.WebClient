@@ -45,7 +45,8 @@ p {
 
 a,
 input,
-button {
+button,
+:hover {
 
     transition: all .1s linear;
 

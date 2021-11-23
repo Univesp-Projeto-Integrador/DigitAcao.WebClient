@@ -2,7 +2,10 @@
     <div class="lesson-content">
 
         <span>{{ contentDone }}</span>
-        <span :class="['lesson-content__current', { 'lesson-content__current--wrong-key': status == 'wrong-key' }]">{{ contentCurrent }}</span>
+        <span :class="[
+            'lesson-content__current',
+            { 'lesson-content__current--wrong-key': status == 'wrong-key' }
+        ]">{{ contentCurrent }}</span>
         <span class="lesson-content__pending">{{ contentPending }}</span>
 
     </div>
@@ -29,12 +32,15 @@ let status = ref('ok')
 // Computed
 const contentDone = computed(() => props.content.substring(0, counter.value))
 const contentCurrent = computed(() => props.content[counter.value])
-const contentPending = computed(() => props.content.slice(-(props.content.length - counter.value - 1)))
+const contentPending = computed(() => props.content.substring(counter.value + 1, props.content.length))
 
 // Methods
 const onKeyDown = ({ event }) => {
 
     if (event.key.length != 1)
+        return
+
+    if(counter.value >= props.content.length)
         return
 
     if(event.key != contentCurrent.value) {
@@ -71,6 +77,7 @@ $wrongKeyColor: var(--theme-color-1);
     font-size: 1.4rem;
     font-weight: 400;
     padding: 2rem;
+    white-space: pre-wrap;
 
     &__current {
 

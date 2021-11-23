@@ -26,7 +26,7 @@ const route = useRoute();
 
     margin: 0 auto;
     max-width: 1200px;
-    padding: 2rem;
+    padding: 3rem 2rem;
 
 }
 
@@ -36,7 +36,7 @@ const route = useRoute();
 
         color: var(--theme-color-1);
         font-size: 1.5rem;
-        margin: 0 0 2rem 0;
+        margin: 0 0 3rem 0;
         text-transform: uppercase;
 
     }

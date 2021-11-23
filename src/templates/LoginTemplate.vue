@@ -1,7 +1,7 @@
 <template>
     <div class="login-template">
 
-        <Box>
+        <Box class="box">
 
             <header class="app-header">
                 
@@ -37,6 +37,12 @@ const route = useRoute();
     justify-content: center;
     display: flex;
     padding: 2rem;
+
+}
+
+.box {
+
+    max-width: 500px;
 
 }
 

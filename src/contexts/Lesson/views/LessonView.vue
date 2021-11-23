@@ -14,7 +14,8 @@ import Template from '@/templates/DefaultTemplate'
 import Lesson from './components/Lesson'
 
 let lesson = {
-    lessonContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis condimentum dapibus. Aenean placerat porta libero ut vulputate. Quisque pretium justo eget enim facilisis, vitae ultricies odio hendrerit. Praesent fringilla ex id turpis pellentesque, eu facilisis mi consequat. Vestibulum nec urna a dolor commodo tempor.'
+    lessonContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    // lessonContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis condimentum dapibus. Aenean placerat porta libero ut vulputate. Quisque pretium justo eget enim facilisis, vitae ultricies odio hendrerit. Praesent fringilla ex id turpis pellentesque, eu facilisis mi consequat. Vestibulum nec urna a dolor commodo tempor.'
 }
 
 </script>
