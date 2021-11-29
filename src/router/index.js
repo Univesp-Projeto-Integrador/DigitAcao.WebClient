@@ -33,6 +33,8 @@ router.beforeEach((to, from, next) => {
         if(to.meta.title)
             title = `${to.meta.title} - ${DEFAULT_TITLE}`;
 
+        store.dispatch('setTitle', to.meta.title)
+
         document.title = title;
 
         next();

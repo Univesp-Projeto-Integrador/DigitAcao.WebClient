@@ -6,7 +6,7 @@ export default [
     },
     {
         path: '/course/:courseId',
-        name: 'Lições',
+        name: 'Curso',
         component: () => import(/* webpackChunkName: "course" */ './views/CourseView')
     }
 ]

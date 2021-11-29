@@ -1,66 +1,31 @@
 <template>
-    <div class="lesson-content">
+    <Container class="lesson-content">
 
         <span>{{ contentDone }}</span>
         <span :class="[
             'lesson-content__current',
             { 'lesson-content__current--wrong-key': status == 'wrong-key' }
-        ]">{{ contentCurrent }}</span>
+        ]">{{ currentChar }}</span>
         <span class="lesson-content__pending">{{ contentPending }}</span>
-
-    </div>
+    
+    </Container>
 </template>
 
 <script setup>
 
-import { ref, computed, defineProps } from "vue"
-import { useKeypress } from "vue3-keypress"
+import Container from '@/components/Container'
 
-const props = defineProps({
+import { computed } from "vue"
+import { useStore } from 'vuex'
 
-    content: {
-        type: String,
-        required: true
-    }
-
-})
-
-// Data
-let counter = ref(0)
-let status = ref('ok')
+const store = useStore()
 
 // Computed
-const contentDone = computed(() => props.content.substring(0, counter.value))
-const contentCurrent = computed(() => props.content[counter.value])
-const contentPending = computed(() => props.content.substring(counter.value + 1, props.content.length))
-
-// Methods
-const onKeyDown = ({ event }) => {
-
-    if (event.key.length != 1)
-        return
-
-    if(counter.value >= props.content.length)
-        return
-
-    if(event.key != contentCurrent.value) {
-
-        status.value = 'wrong-key'
-        return
-
-    }
-
-    status.value = 'ok'
-    counter.value++
-
-}
-
-// Setup
-useKeypress({
-    keyEvent: "keydown",
-    keyBinds: [],
-    onAnyKey: onKeyDown
-})
+const status = computed(() => store.getters['lesson/getStatus'])
+const currentCharPosition = computed(() => store.state.lesson.currentCharPosition)
+const contentDone = computed(() => store.getters['lesson/getContent'].substring(0, currentCharPosition.value))
+const currentChar = computed(() => store.getters['lesson/currentChar'])
+const contentPending = computed(() => store.getters['lesson/getContent'].substring(currentCharPosition.value + 1, store.getters['lesson/getContent'].length))
 
 </script>
 
@@ -71,12 +36,10 @@ $wrongKeyColor: var(--theme-color-1);
 
 .lesson-content {
 
-    background-color: #fff;
-    border-radius: 5px;
     font-family: 'Courier Prime', monospace;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    padding: 2rem;
+    padding-bottom: 2rem;
     white-space: pre-wrap;
 
     &__current {

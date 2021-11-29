@@ -61,6 +61,7 @@ async function registerNewUser(user) {
 
 }
 
+// Config
 export {
     getUserByEmail,
     getUserByEmailPassword,

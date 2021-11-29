@@ -7,7 +7,7 @@ import { UserApi } from '@/api'
 function validateIsLogged() {
 
     if (store.state.user.logged)
-        router.push('/lesson')
+        router.push('/dashboard')
 
 }
 

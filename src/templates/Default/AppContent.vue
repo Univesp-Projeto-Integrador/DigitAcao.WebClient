@@ -3,7 +3,7 @@
 
         <header class="content-header">
 
-            <h1 class="content-header__title">{{ route.meta.title }}</h1>
+            <h1 class="content-header__title">{{ title }}</h1>
 
         </header>
         
@@ -14,10 +14,11 @@
 
 <script setup>
 
-import { useRoute } from 'vue-router';
+import { computed } from "vue";
+import { useStore } from "vuex";
 
-const route = useRoute();
-    
+const title = computed(() => useStore().getters.getTitle)
+
 </script>
 
 <style lang="scss" scoped>

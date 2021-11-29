@@ -4,27 +4,26 @@
         <div class="container">
 
             <Box title="Cursos">
+                
+                <div v-if="!loading">
+                
+                    <ProgressItem
+                        v-for="course in courses"
+                        :key="course.courseId"
+                        :to="`/course/${course.courseId}`"
+                        :label="`${course.courseName} - ${course.courseLevelName}`"
+                        :progress="course.progress"
+                    />
 
-                <ProgressItem
-                    to="/course/1"
-                    label="Digitação Básica"
-                    :progress="100"
-                />
-                <ProgressItem
-                    to="/course/2"
-                    label="Digitação Intermediária"
-                    :progress="0"
-                />
-                <ProgressItem
-                    to="/course/3"
-                    label="Digitação Avançada"
-                />
+                </div>
+
+                <Loader v-else />
 
             </Box>
 
             <Box title="Suas estatísticas">
 
-                <p>Nenhuma estatísticas localizada</p>
+                <Kpis />
 
             </Box>
 
@@ -37,7 +36,20 @@
 
 import Template from '@/templates/DefaultTemplate'
 import Box from '@/components/Box'
+import Loader from '@/components/Loader'
+import Kpis from './components/CoursesKpis'
 import ProgressItem from './components/ProgressItem'
+
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+const loading = computed(() => store.getters['course/getLoading'])
+const courses = computed(() => store.getters['course/getCourses'])
+
+if(courses.value.length == 0)
+    store.dispatch('course/loadCourses')
 
 </script>
 

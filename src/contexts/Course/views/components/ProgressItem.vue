@@ -12,7 +12,7 @@
                 <Icon class="stats__icon" :symbol="statusIcon" />
                 {{ status }}
             </li>
-            <li v-if="progress >= 0" class="stats__item">
+            <li v-if="progress > 0" class="stats__item">
                 <Icon class="stats__icon" symbol="list-check" />
                 Progresso: {{ progress }}%
             </li>

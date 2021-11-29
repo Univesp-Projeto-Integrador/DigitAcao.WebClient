@@ -1,18 +1,23 @@
 <template>
-    <div class="button-group">
+    <div :class="['button-group', { 'button-group--center': align == 'center' }]">
 
         <slot />
 
     </div>
 </template>
 
-<script>
+<script setup>
 
-export default {
+import { defineProps } from 'vue'
 
-    name: 'ButtonGroup'
+defineProps({
 
-}
+    align: {
+        type: String,
+        default: 'left'
+    }
+
+})
 
 </script>
 
@@ -20,7 +25,16 @@ export default {
 
 .button-group {
 
-    margin: 0 0 1.5rem 0;
+    align-items: center;
+    display: flex;
+    margin: 0 0 2rem 0;
+    gap: 1rem;
+
+    &--center {
+
+        justify-content: center;
+
+    }
 
 }
 
