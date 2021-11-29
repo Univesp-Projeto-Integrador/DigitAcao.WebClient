@@ -36,6 +36,8 @@ const actions = {
 
     login({ commit }, user) {
 
+        console.log(user);
+
         commit('setEmail', user.email)
 
     },

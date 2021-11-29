@@ -4,6 +4,15 @@
         <form @submit.prevent="onSubmitHandler">
 
             <FormField
+                label="Primeiro Nome"
+                type="text"
+                placeholder="Ex: João"
+                :maxlength="50"
+                :required="true"
+                v-model="user.firstName"
+            />
+
+            <FormField
                 label="E-mail"
                 type="email"
                 placeholder="Digite um e-mail válido"

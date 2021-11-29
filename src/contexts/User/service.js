@@ -22,18 +22,19 @@ function validatePassword(password) {
 async function login(user) {
 
     const response = new Response()
-    const users = await UserApi.getUserByEmailPassword(user.email, user.password)
+    
+    user = await UserApi.login(user)
 
-    if (users == null)
+    if (user == null)
         response.state = 'error'
 
-    else if (users.length == 0)
+    else if (user.data == null)
         response.state = 'notFound'
 
-    else if (users.length > 0) {
+    else {
 
         response.state = 'success'
-        store.dispatch('user/login', user)
+        store.dispatch('user/login', user.data)
         router.push({ name: 'Dashboard' })
 
     }
@@ -47,25 +48,16 @@ async function signUp(user) {
 
     const response = new Response()
     
-    // Verifica se o usuário já está registrado
-    const users = await UserApi.getUserByEmail(user.email)
-
-    if (users == null)
-        response.state = 'error'
-
-    else if (users.length > 0)
-        response.state = 'alreadyRegistered'
-
-    if (response.state != null)
-        return response
-
     // Registra o novo usuário
-    user = await UserApi.registerNewUser(user)
+    user = await UserApi.signUp(user)
 
     if (user == null)
         response.state = 'error'
 
-    else if (user.id > 0)
+    else if (user.erros.length > 0)
+        response.state = 'alreadyRegistered'
+
+    else if (user.data.userId > 0)
         response.state = 'success'
 
     return response
